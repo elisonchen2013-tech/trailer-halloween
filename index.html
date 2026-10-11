@@ -406,7 +406,7 @@ function frame(now){T=now/1000;requestAnimationFrame(frame);const raw=T-pT,dt=Ma
   if(i==I.pass&&p<.72){const sg=Math.floor(E(cl(p/.7))*(Math.PI*10+1.3)/(Math.PI/4));if(sg!==pseg){pseg=sg;noise(tn,.03,4000,2500,.18,mg)}}
   if(i==I.pass&&!rw&&p>.75){rw=1;sfxS('chime')}}
  if(done&&!$('ov').dataset.end){$('ov').dataset.end=1;$('ov').classList.remove('hide');$('rp').classList.add('hide');$('go').textContent='↻ Assistir de novo';$('ov').querySelector('p').textContent='Fim do trailer'}
- const cm=S[i].cm||0;g.clearRect(0,0,W,H);sd=7;g.save();const cf=CAMS[S[i].id];let z=cm?1:i%2?1.09-.06*p:1.03+.06*p,dx=0,dy=0,rt=0;if(cf)[z,dx,dy,rt]=cf(p);if(cm==2&&!cf)z=1.03+.03*Math.sin(p*18);if(k==5)z*=1+.35*Math.pow(1-cl(tin/.5),2);const sw=cm==1?0:cm==2?9:cm==3?2:4;g.translate(W/2+dx+Math.sin(T*.7)*sw,H/2+dy+Math.cos(T*.9)*sw*.75);g.rotate(rt);g.scale(z,z);g.translate(-W/2,-H/2);DST=0;HIST=0;GL=0;S[i].f(p);g.restore();
+ const cm=S[i].cm||0;g.clearRect(0,0,W,H);sd=7;g.save();const cf=CAMS[S[i].id];let z=cm?1:i%2?1.09-.06*p:1.03+.06*p,dx=0,dy=0,rot=0;if(cf)[z,dx,dy,rot]=cf(p);if(cm==2&&!cf)z=1.03+.03*Math.sin(p*18);if(k==5)z*=1+.35*Math.pow(1-cl(tin/.5),2);const sw=cm==1?0:cm==2?9:cm==3?2:4;g.translate(W/2+dx+Math.sin(T*.7)*sw,H/2+dy+Math.cos(T*.9)*sw*.75);g.rotate(rot);g.scale(z,z);g.translate(-W/2,-H/2);DST=0;HIST=0;GL=0;S[i].f(p);g.restore();
  if(DST>0||FLK)DC.getContext('2d').drawImage(C,0,0);if(DST>0)for(let j=0;j<6;j++){const y=rnd(j)*H|0,h=10+rnd(j+20)*50|0;g.drawImage(DC,0,y*D,C.width,h*D,(rnd(j+40)-.5)*60*DST,y,W,h)}
  if(FLK)for(let j=0;j<5;j++){const y=rnd(j+60)*H|0,h=15+rnd(j+80)*60|0;g.drawImage(DC,0,y*D,C.width,h*D,(rnd(j+100)-.5)*50,y,W,h)}
  if(started&&!done){card(S[i].c||[],p);if(k!=null)trans(k,tin/(k==0?1.2:.9))}
